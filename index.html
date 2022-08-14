@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <!-- Master Css -->
+    <link rel="stylesheet" href="css/master.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+
+    <!-- Start Main Container -->
+    <div class="main-container">
+
+        <!-- Header -->
+        <header>
+            <!-- Top Bar -->
+            <div id="top-bar">
+                <div class="top-bar-section flex-space-between">
+                    <div class="page-list">
+                        <ul class="links">
+                            <li class="home-page-btn">الرئيسية</li>
+                            <li class="contact-page-btn">اتصل بنا</li>
+                        </ul>
+                    </div>
+                    <div class="grop">
+                        <div class="links-list">
+                            <ul class="links">
+                                <li><i class="fa-brands fa-facebook-f"></i></li>
+                                <li><i class="fa-brands fa-facebook-f"></i></li>
+                                <li><i class="fa-brands fa-facebook-f"></i></li>
+                            </ul>
+                        </div>
+                        <div class="search flex-center">
+                            <input id="search" type="search" placeholder="بحث هذه المدونة الإلكترونية">
+                            <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Head Seaction -->
+            <div id="head-sec">
+                <div class="logo">
+                    <div class="text-logo">
+                        <h1 class="headone">التقنية العربية</h1>
+                        <p class="description">تكنولوجيا المعلومات العربية</p>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="image">
+                        <img src="https://placehold.jp/150x150.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Bar -->
+            <div class="menu-bar">
+                <nav>
+                    <div class="icon-home">
+                        <i class="fa-solid fa-house"></i>
+                        <a href="#">الرئيسية</a>
+                    </div>
+                    <ul class="links">
+                        <li><a href="#">شروحات تقنية</a></li>
+                        <li><a href="#">قوالب بلوجر</a></li>
+                        <li><a href="#">بلوجر وأدسنس</a></li>
+                        <li><a href="#">الرئيسية</a></li>
+                    </ul>
+                    <i  id="icon-menu" class=" fa-solid fa-bars"></i>
+                </nav>
+            </div>
+
+        </header>
+
+        <!-- Intro -->
+        <div class="intro">
+            <div class="ticker">
+                <div class="ticker-title">
+                    <i class="fa-solid fa-newspaper"></i>
+                    الاخبار
+                </div>
+                <div class="ticker-content">
+                    <ul class="moving-tape">
+                        <li>
+                            <i class="fa-solid fa-bookmark"></i>
+                            <a href="#">
+                                الربح من الانترنت مع اثبات سحب توظيف في شركة اماراتية مضمون 100%
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-bookmark"></i>
+                            <a href="#">
+                                الربح من الانترنت مع اثبات سحب توظيف في شركة اماراتية مضمون 100%
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- slider -->
+            <span class="pd-20"></span>
+            <div class="slider">
+                <div class="slider-box-main">
+
+                    <div class="slider-controls">
+                        <span id="next" class="next" onclick="nextButton()">next</span>
+                        <span id="prev" class="prev" onclick="prevButton()">back</span>
+                    </div>
+
+                    <ul class="slider-content">
+                        <li class="image">
+                            <img src="images/1.jpg" alt="">
+                            <div class="image-text">
+                                <h3><a href="#">زيادة أرباح جوجل أدسنس 100% وتوازن ظهور الإعلانات في موقعك - هام جداً</a></h3>
+                                <p>تعلم التسويق الإلكتروني كورسات شاملة عن التسويق الإلكتروني والتجارة الإلكتروني  شاع مؤخراً الحديث عن التسويق الإلكتروني والربح من الانترنت, وتعددت الطرق التي شرحت فيها التسويق ...</p>
+                            </div>
+                        </li>
+                        <li class="image">
+                            <img src="images/5.jpg" alt="">
+                            <div class="image-text">
+                                <h3><a href="#">زيادة أرباح جوجل أدسنس 100% وتوازن ظهور الإعلانات في موقعك - هام جداً</a></h3>
+                                <p>تعلم التسويق الإلكتروني كورسات شاملة عن التسويق الإلكتروني والتجارة الإلكتروني  شاع مؤخراً الحديث عن التسويق الإلكتروني والربح من الانترنت, وتعددت الطرق التي شرحت فيها التسويق ...</p>
+                            </div>
+                        </li>
+
+                        <li class="image">
+                            <img src="images/2.jpg" alt="">
+                            <div class="image-text">
+                                <h3><a href="#">زيادة أرباح جوجل أدسنس 100% وتوازن ظهور الإعلانات في موقعك - هام جداً</a></h3>
+                                <p>تعلم التسويق الإلكتروني كورسات شاملة عن التسويق الإلكتروني والتجارة الإلكتروني  شاع مؤخراً الحديث عن التسويق الإلكتروني والربح من الانترنت, وتعددت الطرق التي شرحت فيها التسويق ...</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="slider-box-left">
+                    <div class="slide-left-item">
+                        <img src="images/1.jpg" alt="">
+                        <div class="image-text">
+                            <h3><a href="#">زيادة أرباح جوجل أدسنس 100% وتوازن ظهور الإعلانات في موقعك - هام جداً</a></h3>
+                            
+                        </div>
+                    </div>
+                    <div class="slide-left-item">
+                        <img src="images/1.jpg" alt="">
+                        <div class="image-text">
+                            <h3><a href="#">زيادة أرباح جوجل أدسنس 100% وتوازن ظهور الإعلانات في موقعك - هام جداً</a></h3>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statr Middle Content -->
+
+        <div class="middle-content">
+            <main class="side-right">
+                <section>
+                    <div class="headline">
+                        <h2>
+                            <a href="#">آخر المشاركات</a>
+                        </h2>
+                        <a class="ribble" href="">
+                            <span>  ‏المزيد…   </span>
+                        </a>
+                    </div>
+                    <div class="posts">
+
+                        <article class="post">
+
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="images/3.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="post-title">
+                                        الربح من الانترنت مع اثبات سحب توظيف في شركة اماراتية مضمون 100%
+                                    </h3>
+                                    <div class="details">
+                                        <div class="author-post">
+                                            <i class="fa-solid fa-user"></i>
+                                            <a href="#">Ahmed Magdy</a>
+                                        </div>
+                                        <div class="date-post">
+                                             <i class="fa-solid fa-clock"></i> 
+                                            <time>2022/2/2</time>
+                                        </div>
+                                    </div>
+                                    <p class="text-post">
+                                        أصبح الربح من الانترنت  شائعاً  في الفترة الأخيرة, وتعددت طرق الربح من الانترنت وأصبحت كثيرة وغالبها غير مضمونة. فهناك الكثير من الهواة أخذوا يشرحون طرق مزيفة للربح من الانترنت وغير صحيحة أ…
+                                    </p>
+                                </div>
+                                <div class="post-share">
+                                    <a class="read-more" href="">قراءة المزيد</a>
+                                    <a class="share" href="">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                    </a>
+                                </div>
+                        </article>
+
+                        <article class="post">
+
+                            <div class="image">
+                                <a href="#">
+                                    <img src="images/3.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title">
+                                    الربح من الانترنت مع اثبات سحب توظيف في شركة اماراتية مضمون 100%
+                                </h3>
+                                <div class="details">
+                                    <div class="author-post">
+                                        <i class="fa-solid fa-user"></i>
+                                        <a href="#">Ahmed Magdy</a>
+                                    </div>
+                                    <div class="date-post">
+                                         <i class="fa-solid fa-clock"></i> 
+                                        <time>2022/2/2</time>
+                                    </div>
+                                </div>
+                                <p class="text-post">
+                                    أصبح الربح من الانترنت  شائعاً  في الفترة الأخيرة, وتعددت طرق الربح من الانترنت وأصبحت كثيرة وغالبها غير مضمونة. فهناك الكثير من الهواة أخذوا يشرحون طرق مزيفة للربح من الانترنت وغير صحيحة أ…
+                                </p>
+                            </div>
+                            <div class="post-share">
+                                <a class="read-more" href="">قراءة المزيد</a>
+                                <a class="share" href="">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </a>
+                            </div>
+                    </article>
+
+                    <article class="post">
+
+                        <div class="image">
+                            <a href="#">
+                                <img src="images/3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">
+                                الربح من الانترنت مع اثبات سحب توظيف في شركة اماراتية مضمون 100%
+                            </h3>
+                            <div class="details">
+                                <div class="author-post">
+                                    <i class="fa-solid fa-user"></i>
+                                    <a href="#">Ahmed Magdy</a>
+                                </div>
+                                <div class="date-post">
+                                     <i class="fa-solid fa-clock"></i> 
+                                    <time>2022/2/2</time>
+                                </div>
+                            </div>
+                            <p class="text-post">
+                                أصبح الربح من الانترنت  شائعاً  في الفترة الأخيرة, وتعددت طرق الربح من الانترنت وأصبحت كثيرة وغالبها غير مضمونة. فهناك الكثير من الهواة أخذوا يشرحون طرق مزيفة للربح من الانترنت وغير صحيحة أ…
+                            </p>
+                        </div>
+                        <div class="post-share">
+                            <a class="read-more" href="">قراءة المزيد</a>
+                            <a class="share" href="">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </a>
+                        </div>
+                </article>
+                     
+
+
+                    </div>
+                </section>
+            </main>
+
+            <aside>
+                <div class="link-list">
+                    <div class="headline">
+                        <h2><a href="#">التواصل الإجتماعي </a></h2>
+                    </div>
+                    <nav class="links">
+                        <ul>
+                            <li>
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </li>
+                            <li>
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="posts-faq">
+                    <div class="headline">
+                        <h2><a href="#"> المشاركات الشائعة </a></h2>
+                    </div>
+                    <div class="posts">
+
+                        <article class="post">
+
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="images/3.jpg" alt="">
+                                    </a>
+                                    <div class="grop">
+                                            <time class="date-post"> <i class="fa-solid fa-clock"></i> 2022/2/2</time>
+                                    
+                                        <h3 class="post-title">
+                                            الربح من الانترنت مع اثبات سحب توظيف في شركة اماراتية مضمون 100%
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                
+
+                                <p class="text-post">
+                                    أصبح الربح من الانترنت  شائعاً  في الفترة الأخيرة, وتعددت طرق الربح من الانترنت وأصبحت كثيرة وغالبها غير مضمونة. فهناك الكثير من الهواة أخذوا يشرحون طرق مزيفة للربح من الانترنت وغير صحيحة أ…
+                                </p>
+                        </article>
+                    </div> 
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <section>
+                <div class="headline">
+                    <h2>
+                        <a href="#">التسميات</a>
+                    </h2>
+                </div>
+                <div class="cloud-label">
+                    <ul class="label">
+                        <li>
+                           <a class="fa-solid fa-tag" href="#">
+                            برامج
+                           </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="footer-copy">
+                <div class="copyleft-area">
+                    <span>جميع الحقوق محفوظة </span>
+                    <a href="#"> <span class="copy">&copy</span> التقنية العربية </a>
+                </div>
+                <div class="linkslist">
+                    <ul>
+                        <li><i class="fa-brands fa-facebook-f"></i></li>
+                        <li><i class="fa-brands fa-facebook-f"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- End Middle Content -->
+
+    </div>
+    <!-- End Main Container -->
+    <script src="js/master.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
