@@ -43,5 +43,5 @@ function ticker() {
 // Onload
 window.onload = () => {
     ticker();
-    nextSliderAuto();
+    autoPlaySlideShow();
 }

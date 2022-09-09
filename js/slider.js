@@ -1,90 +1,99 @@
+
 let slider_content = document.querySelector(".slider-content");
 let items = Array.from(slider_content.children);
-let delaySlider = 3000;
-let zIndex = 1;
-let i = 0;
 
 
-function affectRight() {
+let left = 0;
+let right;
+let waitSLide = new Date().getTime();
+let clearSetTimeWaitSLide;
+function initSlider(leftOrRight) {
 
-   items.map((el, index) => {
-         el.style.transition = "0.5s";
-         el.style.left = "-100%";
-         el.style.zIndex = -1;
-   });
+   if(new Date().getTime() > waitSLide + 1000){
   
-   items[i].style.transition = "0.5s";
-   items[i].style.left = "100%";
+      right = left + 1;
 
-   let next_i = i + 1;
-   if(next_i >  items.length - 1){
-      next_i = 0;
-   }
-   items[next_i].style.transition = "0.5s";
-   items[next_i].style.left = "0%";
-   items[next_i].style.zIndex = zIndex + 1;
+      items.forEach((el) => {
+         el.removeAttribute("style");
+         el.classList.remove("transition");
+      })
 
-}
-
-function affectLeft() {
-   items.map((el, index) => {
-      el.style.transition = "0.5";
-      el.style.left = "-100%";
-      el.style.zIndex = -1;
-   });
-  
-   items[i].style.transition = "0.5s";
-   items[i].style.left = "100%";
-
-   let next_i = i + 1;
-   if(next_i >  items.length - 1){
-      next_i = 0;
-   }
-   console.log(next_i)
-   items[next_i].style.left = "0%";
-   items[next_i].style.transition = "0.5s";
-   items[next_i].style.zIndex = zIndex + 1;
-}
-
-
-
-
-// nextSliderAuto();
-let clearTimeOutSlider;
-let autoIncrease = true;
-function nextSliderAuto() {
-   if(autoIncrease == true){
-      affectRight();
-      if(i == items.length - 1){
-         i = 0;
-      }else {
-         i++;
+      if(right > (items.length - 1)){
+         right = 0;
+      }else if(right < 0) {
+         right = (items.length - 1);
       }
-   }
-   clearTimeout(clearTimeOutSlider);
-   clearTimeOutSlider = setTimeout(nextSliderAuto, delaySlider);
-};
 
-// next Button
-let clearSliderAuto;
-function nextButton() {
-   if(i !== items.length - 1){
-      i++;
+      effectSlider(right, left, leftOrRight);
+
+      if(left > (items.length - 2)){
+         left = 0;
+      }else {
+         left++;
+      }
+
+      waitSLide = new Date().getTime();
    }
-   affectRight();
-   autoIncrease = false;
-   nextSliderAuto()
-   autoIncrease = true;
+
 }
 
-// Prev Button
+function effectSlider(right, left, rightOrLeft) {
+
+   let styleLeftLeft;
+   let styleLeftLeftSetTime;
+   let styleLeftRight;
+   let styleLeftRightSetTime;
+
+   if(rightOrLeft == true){
+      styleLeftLeft = "0%";
+      styleLeftRight = "-100%";
+      styleLeftRightSetTime = "100%";
+      styleLeftLeftSetTime  = "0%";
+   }else {
+      styleLeftLeft = "0%";
+      styleLeftRight = "100%";
+      styleLeftRightSetTime = "-100%";
+      styleLeftLeftSetTime  = "0%";
+   }
+
+
+   items[left].style.zIndex = "33";
+   items[right].style.zIndex = "33";
+
+   items[left].style.left = styleLeftLeft;
+   items[right].style.left = styleLeftRight;
+   
+   
+   setTimeout(() => {
+      items[left].classList.add("transition");
+      items[right].classList.add("transition");
+
+      items[left].style.left = styleLeftRightSetTime;
+      items[right].style.left = styleLeftLeftSetTime;
+
+   },10);
+
+
+}
+
+let autoPlaySlideShowSetTimeClear;
+function nextButton() {
+   clearTimeout(autoPlaySlideShowSetTimeClear);
+   autoPlaySlideShow(true);
+}
 
 function prevButton() {
-   if(i >= 1){
-      i--;
+   clearTimeout(autoPlaySlideShowSetTimeClear);
+   autoPlaySlideShow(false);
+}
+
+function autoPlaySlideShow(n) {
+   let ROL;
+   if(n == null || n == true){
+      ROL = true;
+   }else {
+      ROL = false;
    }
-   affectLeft();
-   autoIncrease = false;
-   nextSliderAuto();
-   autoIncrease = true;
+   initSlider(ROL);
+   autoPlaySlideShowSetTimeClear = setTimeout(autoPlaySlideShow, 5000);
 }
