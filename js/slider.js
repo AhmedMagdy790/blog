@@ -1,78 +1,76 @@
-
 let slider_content = document.querySelector(".slider-content");
 let items = Array.from(slider_content.children);
 
-
-let left = 0;
-let right;
-let waitSLide = new Date().getTime();
-let clearSetTimeWaitSLide;
+let prevItem;
+let centerItem = (items.length - 1);
+let nextItem;
+let waitSlide = new Date().getTime();
 function initSlider(leftOrRight) {
 
-   if(new Date().getTime() > waitSLide + 1000){
-  
-      right = left + 1;
+   if(new Date().getTime() > waitSlide + 1100){
 
       items.forEach((el) => {
          el.removeAttribute("style");
-         el.classList.remove("transition");
-      })
+         el.classList.remove(
+            "center-to-right",
+            "left-to-center",
+            "right-to-center",
+            "center-to-left"
+         );
+      });
 
-      if(right > (items.length - 1)){
-         right = 0;
-      }else if(right < 0) {
-         right = (items.length - 1);
-      }
-
-      effectSlider(right, left, leftOrRight);
-
-      if(left > (items.length - 2)){
-         left = 0;
+      if(leftOrRight === false) {
+         centerItem--;
       }else {
-         left++;
+         centerItem++;
       }
 
-      waitSLide = new Date().getTime();
-   }
+      if(centerItem > (items.length - 1)){
+         centerItem = 0;
+      }else if(centerItem < 0){
+         centerItem = (items.length - 1);
+      }
 
+      // prev
+      prevItem = centerItem - 1;
+      if(prevItem > (items.length - 1)){
+         prevItem = 0;
+      }else if(prevItem < 0) {
+         prevItem = (items.length - 1);
+      }
+      
+      // Next
+      nextItem = centerItem + 1;
+      if(nextItem > (items.length - 1)){
+         nextItem = 0;
+      }else if(nextItem < 0) {
+         nextItem = (items.length - 1);
+      }
+
+      effectSlider(leftOrRight, centerItem, nextItem, prevItem);
+      
+      waitSlide = new Date().getTime();
+   }
 }
 
-function effectSlider(right, left, rightOrLeft) {
-
-   let styleLeftLeft;
-   let styleLeftLeftSetTime;
-   let styleLeftRight;
-   let styleLeftRightSetTime;
+function effectSlider(rightOrLeft, centerItem, nextItem, prevItem) {
 
    if(rightOrLeft == true){
-      styleLeftLeft = "0%";
-      styleLeftRight = "-100%";
-      styleLeftRightSetTime = "100%";
-      styleLeftLeftSetTime  = "0%";
+      // Prev And Center
+      items[prevItem].style.zIndex = "99";
+      items[centerItem].style.zIndex = "99";
+
+      items[prevItem].classList.add("center-to-right");
+      items[centerItem].classList.add("left-to-center");
    }else {
-      styleLeftLeft = "0%";
-      styleLeftRight = "100%";
-      styleLeftRightSetTime = "-100%";
-      styleLeftLeftSetTime  = "0%";
+
+      // Center And Next
+      items[centerItem].style.zIndex = "99";
+      items[nextItem].style.zIndex = "99";
+
+      items[centerItem].classList.add("right-to-center");
+      items[nextItem].classList.add("center-to-left"); 
    }
-
-
-   items[left].style.zIndex = "33";
-   items[right].style.zIndex = "33";
-
-   items[left].style.left = styleLeftLeft;
-   items[right].style.left = styleLeftRight;
-   
-   
-   setTimeout(() => {
-      items[left].classList.add("transition");
-      items[right].classList.add("transition");
-
-      items[left].style.left = styleLeftRightSetTime;
-      items[right].style.left = styleLeftLeftSetTime;
-
-   },10);
-
 
 }
 
@@ -95,5 +93,9 @@ function autoPlaySlideShow(n) {
       ROL = false;
    }
    initSlider(ROL);
-   autoPlaySlideShowSetTimeClear = setTimeout(autoPlaySlideShow, 5000);
+   autoPlaySlideShowSetTimeClear = setTimeout(autoPlaySlideShow, 1000);
+}
+
+onload = () => {
+   autoPlaySlideShow();
 }
